@@ -1,30 +1,27 @@
 import { useState } from 'react'
 import './App.css'
 
+
 function App() {
-  // Store the text user types in the input field
   const [inputValue, setInputValue] = useState('')
-  
-  // Store all tasks in a list - load saved tasks from browser storage when page loads
   const [todos, setTodos] = useState(() => {
     const todosString = localStorage.getItem("todos");
     return todosString ? JSON.parse(todosString) : [];
   })
 
-  // Function to add a new task when user clicks Add button
   const handleAddTask = () => {
-    if (inputValue.trim() === "") return; // Don't add empty tasks
-    
+    if (inputValue.trim() === "") return;
+
     const newTodo = {
-      id: Date.now(), // Create unique ID using timestamp
-      title: inputValue, // The task text from input field
-      isCompleted: false // New tasks are not completed by default
+      id: Date.now(),
+      title: inputValue,
+      isCompleted: false
     }
-    
-    const updatedTodos = [...todos, newTodo]; // Add new task to the list
-    setTodos(updatedTodos); // Update the state
-    localStorage.setItem("todos", JSON.stringify(updatedTodos)); // Save to browser storage
-    setInputValue(''); // Clear the input field
+
+    const updatedTodos = [...todos, newTodo];
+    setTodos(updatedTodos);
+    localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    setInputValue('');
   }
 
   const handleDeleteTask = (id) => {
@@ -48,8 +45,8 @@ function App() {
           <h1>Todo List</h1>
 
           <div className="input-container">
-            <input 
-              type="text" 
+            <input
+              type="text"
               placeholder='Enter Your Task'
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
@@ -65,8 +62,8 @@ function App() {
               todos.map((todo) => (
                 <div key={todo.id} className="todo-item">
                   <div className="task">
-                    <input 
-                      type="checkbox" 
+                    <input
+                      type="checkbox"
                       checked={todo.isCompleted}
                       onChange={() => handleToggleTask(todo.id)}
                     />
