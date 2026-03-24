@@ -153,8 +153,10 @@ h1 {
     width: 100%;
     height: auto;
     max-height: none;
-    min-height: 100vh;
+    min-height: 60vh;
     border-radius: 10px;
+    margin-top: 150px;
+
   }
 
   h1 {
