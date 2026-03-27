@@ -1,4 +1,4 @@
-This is simple Todo List. You can Manage Your Task  
+I Built a Task Management app . Using React and localstorage , deployed on vercel 
 
 
 🚀 Features
@@ -7,8 +7,7 @@ Task Persistence: Saves your tasks so they remain even after refreshing the page
 
 
 
-📦 Installation & Setup
-Follow these steps to run the project locally:
+📦 Installation & Setup on locally:
 
 Bash
 cd todo-app
