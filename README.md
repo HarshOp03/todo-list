@@ -10,12 +10,6 @@ Task Persistence: Saves your tasks so they remain even after refreshing the page
 📦 Installation & Setup
 Follow these steps to run the project locally:
 
-Clone the repository:
-
-Bash
-git clone https://github.com/your-username/todo-app.git
-Navigate to the project directory:
-
 Bash
 cd todo-app
 Install dependencies:
